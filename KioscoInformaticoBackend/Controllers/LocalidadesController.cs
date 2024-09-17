@@ -24,10 +24,14 @@ namespace KioscoInformaticoBackend.Controllers
 
         // GET: api/Localidades
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Localidad>>> GetLocalidades()
-        {
+        public async Task<ActionResult<IEnumerable<Localidad>>> GetLocalidades([FromQuery] string? filtro)
+        {   
+            if (filtro != null) {
+                return await _context.Localidades.Where(l => l.Nombre.ToUpper().Contains(filtro)).ToListAsync();
+            }
             return await _context.Localidades.ToListAsync();
         }
+
 
         // GET: api/Localidades/5
         [HttpGet("{id}")]

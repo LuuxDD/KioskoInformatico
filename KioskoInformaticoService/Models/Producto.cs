@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace KioskoInformaticoServices.Models;
 
@@ -7,7 +8,10 @@ public partial class Producto
 {
     public int Id { get; set; }
 
+    [Required]
     public string Nombre { get; set; } = null!;
+
+    [Required]
 
     public decimal Precio { get; set; }
 
