@@ -12,9 +12,9 @@ namespace KioskoInformaticoServices.Services
 {
     public class GenericService<T> : IGenericService<T> where T : class
     {
-        private readonly HttpClient client;
-        private readonly JsonSerializerOptions options;
-        private readonly string _endpoint;
+        protected readonly HttpClient client;
+        protected readonly JsonSerializerOptions options;
+        protected readonly string _endpoint;
 
         public GenericService()
         {
@@ -24,9 +24,9 @@ namespace KioskoInformaticoServices.Services
             this._endpoint = urlApi + ApiEndpoints.GetEndpoint(typeof(T).Name);
         }
 
-        public async Task<List<T>?> GetAllAsync()
+        public async Task<List<T>?> GetAllAsync(string? filtro)
         {
-            var response = await client.GetAsync(_endpoint);
+            var response = await client.GetAsync($"{_endpoint}?filtro={filtro}");
             var content = await response.Content.ReadAsStringAsync();
             if (!response.IsSuccessStatusCode)
             {
