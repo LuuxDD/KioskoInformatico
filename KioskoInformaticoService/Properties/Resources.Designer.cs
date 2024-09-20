@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KioskoInformaticoServices.Properties {
+namespace KioscoInformaticoServices.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace KioskoInformaticoServices.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KioskoInformaticoServices.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KioscoInformaticoServices.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace KioskoInformaticoServices.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://datakioscosofi.azurewebsites.net/api/.
+        ///   Busca una cadena traducida similar a https://datakioscoale.azurewebsites.net/api/.
         /// </summary>
         internal static string UrlApi {
             get {
