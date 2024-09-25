@@ -21,13 +21,13 @@ namespace KioskoInformaticoServices.Services
         {
             this.client = new HttpClient();
             this.options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
-            var urlApi = Properties.Settings.Default.UrlApi;
+            var urlApi = Properties.Resources.UrlApi;
             this._endpoint = urlApi + ApiEndpoints.GetEndpoint(typeof(T).Name);
         }
 
-        public async Task<List<T>?> GetAllAsync(string? filtro)
+        public async Task<List<T>?> GetAllAsync()
         {
-            var response = await client.GetAsync($"{_endpoint}?filtro={filtro}");
+            var response = await client.GetAsync(_endpoint);
             var content = await response.Content.ReadAsStringAsync();
             if (!response.IsSuccessStatusCode)
             {
@@ -35,6 +35,7 @@ namespace KioskoInformaticoServices.Services
             }
             return JsonSerializer.Deserialize<List<T>>(content, options); ;
         }
+
 
         public async Task<T?> GetByIdAsync(int id)
         {
