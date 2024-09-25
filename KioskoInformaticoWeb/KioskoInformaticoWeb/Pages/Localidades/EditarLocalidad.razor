@@ -36,9 +36,9 @@ else
     {
         localidad = await LocalidadService.GetByIdAsync(IdLocalidadEditada);
     }
-    private void Guardar()
+    private async void Guardar()
     {
-        LocalidadService.UpdateAsync(localidad);
+        await LocalidadService.UpdateAsync(localidad);
         NavigationManager.NavigateTo("/localidades"); 
     }
 

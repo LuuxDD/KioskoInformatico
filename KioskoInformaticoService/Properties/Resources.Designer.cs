@@ -61,7 +61,7 @@ namespace KioskoInformaticoServices.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://datakioscoale.azurewebsites.net/api/.
+        ///   Busca una cadena traducida similar a https://datakioscoluu.azurewebsites.net/api/.
         /// </summary>
         internal static string UrlApi {
             get {
