@@ -17,7 +17,7 @@ namespace KioskoInformaticoService.Views
 {
     public partial class LocalidadesView : Form
     {
-        IGenericService<Localidad> localidadService = new GenericService<Localidad>();
+        ILocalidadService localidadService = new LocalidadService();
         BindingSource ListLocalidades = new BindingSource();
         Localidad localidadCurrent;
         public LocalidadesView()
@@ -65,17 +65,45 @@ namespace KioskoInformaticoService.Views
             tabControl.SelectTab(tabPageLista);
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void bntModificar_Click(object sender, EventArgs e)
         {
             localidadCurrent = (Localidad)ListLocalidades.Current;
             txtNombre.Text = localidadCurrent.Nombre;
             tabControl.SelectTab(tabPageAgregarEditar);
+        }
 
+        private async void bntElimiar_Click(object sender, EventArgs e)
+        {
+            localidadCurrent = (Localidad)ListLocalidades.Current;
+            var result = MessageBox.Show($"¿Está seguro que desea eliminar la localidad? {localidadCurrent.Nombre}", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                localidadCurrent = (Localidad)ListLocalidades.Current;
+                localidadService.DeleteAsync(localidadCurrent.Id);
+                CargarGrilla();
+            }
+            localidadCurrent = null;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(tabPageLista);
+        }
+
+        private void bntBuscar_Click(object sender, EventArgs e)
+        {
+            FiltrarLocalidades();
+        }
+
+        private async void FiltrarLocalidades()
+        {
+            ListLocalidades.DataSource = await localidadService.GetAllAsync(txtFiltro.Text);
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            FiltrarLocalidades();
         }
     }
 }

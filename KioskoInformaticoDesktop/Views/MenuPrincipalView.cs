@@ -1,3 +1,4 @@
+using KioscoInformaticoDesktop.Views;
 using KioskoInformaticoService.Views;
 
 namespace KioskoInformaticoService
@@ -22,6 +23,12 @@ namespace KioskoInformaticoService
         {
             LocalidadesView localidadesView = new LocalidadesView();
             localidadesView.ShowDialog();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           ProductoView productoView = new ProductoView();
+            productoView.ShowDialog();
         }
     }
 }

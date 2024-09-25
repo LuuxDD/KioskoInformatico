@@ -2,6 +2,7 @@
 using KioskoInformaticoServices.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
@@ -20,7 +21,7 @@ namespace KioskoInformaticoServices.Services
         {
             this.client = new HttpClient();
             this.options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
-            var urlApi = Properties.Resources.UrlApi;
+            var urlApi = Properties.Settings.Default.UrlApi;
             this._endpoint = urlApi + ApiEndpoints.GetEndpoint(typeof(T).Name);
         }
 
