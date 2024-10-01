@@ -32,9 +32,10 @@
             MenuItemPrincipal = new FontAwesome.Sharp.IconMenuItem();
             MenuItemBases = new FontAwesome.Sharp.IconMenuItem();
             MenuItemLocalidades = new FontAwesome.Sharp.IconMenuItem();
+            productosToolStripMenuItem = new ToolStripMenuItem();
             iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             MenuItemSalirDelSistema = new FontAwesome.Sharp.IconMenuItem();
-            productosToolStripMenuItem = new ToolStripMenuItem();
+            clientesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             // 
             // MenuItemBases
             // 
-            MenuItemBases.DropDownItems.AddRange(new ToolStripItem[] { MenuItemLocalidades, productosToolStripMenuItem });
+            MenuItemBases.DropDownItems.AddRange(new ToolStripItem[] { MenuItemLocalidades, productosToolStripMenuItem, clientesToolStripMenuItem });
             MenuItemBases.IconChar = FontAwesome.Sharp.IconChar.Database;
             MenuItemBases.IconColor = Color.Black;
             MenuItemBases.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -81,6 +82,13 @@
             MenuItemLocalidades.Size = new Size(232, 34);
             MenuItemLocalidades.Text = "Localidades";
             MenuItemLocalidades.Click += MenuItemLocalidades_Click;
+            // 
+            // productosToolStripMenuItem
+            // 
+            productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            productosToolStripMenuItem.Size = new Size(232, 34);
+            productosToolStripMenuItem.Text = "Productos";
+            productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
             // 
             // iconMenuItem2
             // 
@@ -105,12 +113,11 @@
             MenuItemSalirDelSistema.Text = "Salir del Sistema";
             MenuItemSalirDelSistema.Click += MenuItemSalirDelSistema_Click;
             // 
-            // productosToolStripMenuItem
+            // clientesToolStripMenuItem
             // 
-            productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            productosToolStripMenuItem.Size = new Size(232, 34);
-            productosToolStripMenuItem.Text = "Productos";
-            productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
+            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            clientesToolStripMenuItem.Size = new Size(232, 34);
+            clientesToolStripMenuItem.Text = "Clientes";
             // 
             // MenuPrincipalView
             // 
@@ -140,5 +147,6 @@
         private FontAwesome.Sharp.IconMenuItem MenuItemSalirDelSistema;
         private FontAwesome.Sharp.IconMenuItem MenuItemLocalidades;
         private ToolStripMenuItem productosToolStripMenuItem;
+        private ToolStripMenuItem clientesToolStripMenuItem;
     }
 }

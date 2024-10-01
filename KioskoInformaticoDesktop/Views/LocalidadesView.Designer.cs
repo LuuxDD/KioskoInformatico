@@ -55,7 +55,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.LightSteelBlue;
+            panel1.BackColor = Color.PowderBlue;
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-1, 13);
             panel1.Margin = new Padding(4);
@@ -66,7 +66,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.LightSteelBlue;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(33, 16);
             label1.Margin = new Padding(4, 0, 4, 0);

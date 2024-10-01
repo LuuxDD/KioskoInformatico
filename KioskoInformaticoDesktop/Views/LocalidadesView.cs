@@ -105,5 +105,7 @@ namespace KioskoInformaticoService.Views
         {
             FiltrarLocalidades();
         }
+
+        
     }
 }
