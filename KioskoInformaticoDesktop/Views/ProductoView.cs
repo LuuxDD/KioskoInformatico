@@ -37,14 +37,14 @@ namespace KioscoInformaticoDesktop.Views
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            tabControl.SelectTab(tabPageAgregarEditar);
+            tabControlLista.SelectTab(tabPageAgregarEditar);
         }
 
         private void bntModificar_Click(object sender, EventArgs e)
         {
             productoCurrent = (Producto)ListProductos.Current;
             txtNombre.Text = productoCurrent.Nombre;
-            tabControl.SelectTab(tabPageAgregarEditar);
+            tabControlLista.SelectTab(tabPageAgregarEditar);
         }
 
         private async void bntElimiar_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace KioscoInformaticoDesktop.Views
             }
             await CargarGrilla();
             txtNombre.Text = string.Empty;
-            tabControl.SelectTab(tabPageLista);
+            tabControlLista.SelectTab(tabPageLista);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

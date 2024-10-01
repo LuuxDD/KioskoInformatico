@@ -18,12 +18,13 @@ namespace KioscoInformaticoDesktop.Views
     public partial class ClienteView : Form
     {
         IClienteService clienteService = new ClienteService();
+        ILocalidadService localidadService = new LocalidadService();
         BindingSource ListClientes = new BindingSource();
         Cliente clienteCurrent;
         public ClienteView()
         {
             InitializeComponent();
-            dataGridClientesView.DataSourse = ListClientes;
+            dataGridClientesView.DataSource = ListClientes;
             CargarGrilla();
             CargarCombo();
         }
@@ -43,7 +44,7 @@ namespace KioscoInformaticoDesktop.Views
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            tabControl.SelectTab(tabPageAgregarEditar);
+            tabControlLista.SelectTab(tabPageAgregarEditar);
 
         }
 
@@ -51,10 +52,10 @@ namespace KioscoInformaticoDesktop.Views
         {
             clienteCurrent = (Cliente)ListClientes.Current;
             txtNombre.Text = clienteCurrent.Nombre;
-            txtDireccion.Text = clienteCurrent.Direccion;
-            txtTelefono.Text = clienteCurrent.Telefonos;
+            lblDireccion.Text = clienteCurrent.Direccion;
+            lblTelefono.Text = clienteCurrent.Telefonos;
             comboLocalidades.SelectedValue = clienteCurrent.LocalidadId;
-            tabControl.SelectedTab = (tabPageAgregarEditar);
+            tabControlLista.SelectedTab = (tabPageAgregarEditar);
         }
 
         private async void bntElimiar_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace KioscoInformaticoDesktop.Views
 
             if (clienteCurrent == null)
             {
-                MessageBox.Show("Debe seleecionar un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             var result = MessageBox.Show($"¿Está seguro que desea eliminar el cliente {clienteCurrent.Nombre}?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -115,7 +116,8 @@ namespace KioscoInformaticoDesktop.Views
                     Direccion = txtDireccion.Text,
                     Telefonos = txtTelefono.Text,
                     LocalidadId = (int)comboLocalidades.SelectedValue
-                }
+                };
+                await clienteService.AddAsync(cliente);
             }
 
             await CargarGrilla();
@@ -123,7 +125,7 @@ namespace KioscoInformaticoDesktop.Views
             txtNombre.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             txtTelefono.Text = string.Empty;
-            tabControl.SelectTab(tabPageLista);
+            tabControlLista.SelectTab(tabPageLista);
 
         }
 
@@ -134,7 +136,7 @@ namespace KioscoInformaticoDesktop.Views
             txtDireccion.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             comboLocalidades.SelectedIndex = 0;
-            tabControl.SelectTab(tabPageLista);
+            tabControlLista.SelectTab(tabPageLista);
         }
 
 

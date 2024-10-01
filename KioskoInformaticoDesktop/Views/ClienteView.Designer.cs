@@ -40,10 +40,10 @@
             tabPageAgregarEditar = new TabPage();
             comboLocalidades = new ComboBox();
             label4 = new Label();
-            textBox2 = new TextBox();
-            txtTelefono = new Label();
-            textBox1 = new TextBox();
-            txtDireccion = new Label();
+            txtTelefono = new TextBox();
+            lblTelefono = new Label();
+            txtDireccion = new TextBox();
+            lblDireccion = new Label();
             btnCancelar = new FontAwesome.Sharp.IconButton();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             txtNombre = new TextBox();
@@ -175,10 +175,10 @@
             // 
             tabPageAgregarEditar.Controls.Add(comboLocalidades);
             tabPageAgregarEditar.Controls.Add(label4);
-            tabPageAgregarEditar.Controls.Add(textBox2);
             tabPageAgregarEditar.Controls.Add(txtTelefono);
-            tabPageAgregarEditar.Controls.Add(textBox1);
+            tabPageAgregarEditar.Controls.Add(lblTelefono);
             tabPageAgregarEditar.Controls.Add(txtDireccion);
+            tabPageAgregarEditar.Controls.Add(lblDireccion);
             tabPageAgregarEditar.Controls.Add(btnCancelar);
             tabPageAgregarEditar.Controls.Add(btnGuardar);
             tabPageAgregarEditar.Controls.Add(txtNombre);
@@ -210,41 +210,41 @@
             label4.TabIndex = 16;
             label4.Text = "Localidad:";
             // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(308, 164);
-            textBox2.Margin = new Padding(4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(224, 27);
-            textBox2.TabIndex = 15;
-            // 
             // txtTelefono
             // 
-            txtTelefono.AutoSize = true;
-            txtTelefono.Location = new Point(182, 170);
-            txtTelefono.Margin = new Padding(4, 0, 4, 0);
+            txtTelefono.Location = new Point(308, 164);
+            txtTelefono.Margin = new Padding(4);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(70, 20);
-            txtTelefono.TabIndex = 14;
-            txtTelefono.Text = "Telefono:";
+            txtTelefono.Size = new Size(224, 27);
+            txtTelefono.TabIndex = 15;
             // 
-            // textBox1
+            // lblTelefono
             // 
-            textBox1.Location = new Point(308, 129);
-            textBox1.Margin = new Padding(4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 27);
-            textBox1.TabIndex = 13;
+            lblTelefono.AutoSize = true;
+            lblTelefono.Location = new Point(182, 170);
+            lblTelefono.Margin = new Padding(4, 0, 4, 0);
+            lblTelefono.Name = "lblTelefono";
+            lblTelefono.Size = new Size(70, 20);
+            lblTelefono.TabIndex = 14;
+            lblTelefono.Text = "Telefono:";
             // 
             // txtDireccion
             // 
-            txtDireccion.AutoSize = true;
-            txtDireccion.Location = new Point(182, 129);
-            txtDireccion.Margin = new Padding(4, 0, 4, 0);
+            txtDireccion.Location = new Point(308, 129);
+            txtDireccion.Margin = new Padding(4);
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(75, 20);
-            txtDireccion.TabIndex = 12;
-            txtDireccion.Text = "Direccion:";
+            txtDireccion.Size = new Size(224, 27);
+            txtDireccion.TabIndex = 13;
+            // 
+            // lblDireccion
+            // 
+            lblDireccion.AutoSize = true;
+            lblDireccion.Location = new Point(182, 129);
+            lblDireccion.Margin = new Padding(4, 0, 4, 0);
+            lblDireccion.Name = "lblDireccion";
+            lblDireccion.Size = new Size(75, 20);
+            lblDireccion.TabIndex = 12;
+            lblDireccion.Text = "Direccion:";
             // 
             // btnCancelar
             // 
@@ -408,11 +408,11 @@
         private FontAwesome.Sharp.IconButton bntElimiar;
         private FontAwesome.Sharp.IconButton bntSalir;
         private FontAwesome.Sharp.IconButton btnBuscar;
-        private TextBox textBox1;
-        private Label txtDireccion;
-        private TextBox textBox2;
+        private TextBox txtDireccion;
+        private Label lblDireccion;
+        private TextBox txtTelefono;
         private Label label5;
-        private Label txtTelefono;
+        private Label lblTelefono;
         private ComboBox comboLocalidades;
         private Label label4;
     }
