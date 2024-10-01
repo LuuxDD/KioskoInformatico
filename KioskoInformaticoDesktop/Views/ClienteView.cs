@@ -39,7 +39,9 @@ namespace KioscoInformaticoDesktop.Views
 
         private async Task CargarGrilla()
         {
+            var clientes = await clienteService.GetAllAsync(null);
             ListClientes.DataSource = await clienteService.GetAllAsync();
+            dataGridClientesView.Columns["Localidad"].Visible = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -56,6 +58,7 @@ namespace KioscoInformaticoDesktop.Views
             lblTelefono.Text = clienteCurrent.Telefonos;
             comboLocalidades.SelectedValue = clienteCurrent.LocalidadId;
             tabControlLista.SelectedTab = (tabPageAgregarEditar);
+            dateTimeFechaNacimiento.Value = clienteCurrent.FechaNacimiento;
         }
 
         private async void bntElimiar_Click(object sender, EventArgs e)
@@ -87,7 +90,7 @@ namespace KioscoInformaticoDesktop.Views
 
         private async void FiltrarCliente()
         {
-           ListClientes.DataSource = await clienteService.GetAllAsync(txtFiltro.Text);
+            ListClientes.DataSource = await clienteService.GetAllAsync(txtFiltro.Text);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -104,6 +107,7 @@ namespace KioscoInformaticoDesktop.Views
                 clienteCurrent.Nombre = txtNombre.Text;
                 clienteCurrent.Direccion = txtDireccion.Text;
                 clienteCurrent.Telefonos = txtTelefono.Text;
+                clienteCurrent.FechaNacimiento = dateTimeFechaNacimiento.Value;
                 clienteCurrent.LocalidadId = (int)comboLocalidades.SelectedValue;
                 await clienteService.UpdateAsync(clienteCurrent);
                 clienteCurrent = null;
@@ -115,7 +119,8 @@ namespace KioscoInformaticoDesktop.Views
                     Nombre = txtNombre.Text,
                     Direccion = txtDireccion.Text,
                     Telefonos = txtTelefono.Text,
-                    LocalidadId = (int)comboLocalidades.SelectedValue
+                    LocalidadId = (int)comboLocalidades.SelectedValue,
+                    FechaNacimiento = dateTimeFechaNacimiento.Value
                 };
                 await clienteService.AddAsync(cliente);
             }
@@ -138,7 +143,6 @@ namespace KioscoInformaticoDesktop.Views
             comboLocalidades.SelectedIndex = 0;
             tabControlLista.SelectTab(tabPageLista);
         }
-
 
     }
 }
