@@ -32,12 +32,18 @@
             label1 = new Label();
             tabControlLista = new TabControl();
             tabPageLista = new TabPage();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnBuscar = new FontAwesome.Sharp.IconButton();
             bntBuscar = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
             txtFiltro = new TextBox();
-            dataGridLocalidadesView = new DataGridView();
+            dataGridClientesView = new DataGridView();
             tabPageAgregarEditar = new TabPage();
+            comboLocalidades = new ComboBox();
+            label4 = new Label();
+            textBox2 = new TextBox();
+            txtTelefono = new Label();
+            textBox1 = new TextBox();
+            txtDireccion = new Label();
             btnCancelar = new FontAwesome.Sharp.IconButton();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             txtNombre = new TextBox();
@@ -49,7 +55,7 @@
             panel1.SuspendLayout();
             tabControlLista.SuspendLayout();
             tabPageLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridLocalidadesView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridClientesView).BeginInit();
             tabPageAgregarEditar.SuspendLayout();
             SuspendLayout();
             // 
@@ -88,11 +94,11 @@
             // 
             // tabPageLista
             // 
-            tabPageLista.Controls.Add(iconButton1);
+            tabPageLista.Controls.Add(btnBuscar);
             tabPageLista.Controls.Add(bntBuscar);
             tabPageLista.Controls.Add(label3);
             tabPageLista.Controls.Add(txtFiltro);
-            tabPageLista.Controls.Add(dataGridLocalidadesView);
+            tabPageLista.Controls.Add(dataGridClientesView);
             tabPageLista.Location = new Point(4, 29);
             tabPageLista.Margin = new Padding(4);
             tabPageLista.Name = "tabPageLista";
@@ -102,22 +108,22 @@
             tabPageLista.Text = "Lista";
             tabPageLista.UseVisualStyleBackColor = true;
             // 
-            // iconButton1
+            // btnBuscar
             // 
-            iconButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(592, 35);
-            iconButton1.Margin = new Padding(4);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(107, 47);
-            iconButton1.TabIndex = 9;
-            iconButton1.Text = "&Buscar";
-            iconButton1.TextAlign = ContentAlignment.MiddleRight;
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += iconButton1_Click;
+            btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            btnBuscar.IconColor = Color.Black;
+            btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBuscar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBuscar.Location = new Point(592, 35);
+            btnBuscar.Margin = new Padding(4);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(107, 47);
+            btnBuscar.TabIndex = 9;
+            btnBuscar.Text = "&Buscar";
+            btnBuscar.TextAlign = ContentAlignment.MiddleRight;
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += iconButton1_Click;
             // 
             // bntBuscar
             // 
@@ -151,22 +157,28 @@
             txtFiltro.Size = new Size(552, 27);
             txtFiltro.TabIndex = 1;
             // 
-            // dataGridLocalidadesView
+            // dataGridClientesView
             // 
-            dataGridLocalidadesView.AllowUserToAddRows = false;
-            dataGridLocalidadesView.AllowUserToDeleteRows = false;
-            dataGridLocalidadesView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridLocalidadesView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridLocalidadesView.Location = new Point(33, 90);
-            dataGridLocalidadesView.Margin = new Padding(4);
-            dataGridLocalidadesView.Name = "dataGridLocalidadesView";
-            dataGridLocalidadesView.ReadOnly = true;
-            dataGridLocalidadesView.RowHeadersWidth = 51;
-            dataGridLocalidadesView.Size = new Size(657, 214);
-            dataGridLocalidadesView.TabIndex = 0;
+            dataGridClientesView.AllowUserToAddRows = false;
+            dataGridClientesView.AllowUserToDeleteRows = false;
+            dataGridClientesView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridClientesView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridClientesView.Location = new Point(33, 90);
+            dataGridClientesView.Margin = new Padding(4);
+            dataGridClientesView.Name = "dataGridClientesView";
+            dataGridClientesView.ReadOnly = true;
+            dataGridClientesView.RowHeadersWidth = 51;
+            dataGridClientesView.Size = new Size(657, 214);
+            dataGridClientesView.TabIndex = 0;
             // 
             // tabPageAgregarEditar
             // 
+            tabPageAgregarEditar.Controls.Add(comboLocalidades);
+            tabPageAgregarEditar.Controls.Add(label4);
+            tabPageAgregarEditar.Controls.Add(textBox2);
+            tabPageAgregarEditar.Controls.Add(txtTelefono);
+            tabPageAgregarEditar.Controls.Add(textBox1);
+            tabPageAgregarEditar.Controls.Add(txtDireccion);
             tabPageAgregarEditar.Controls.Add(btnCancelar);
             tabPageAgregarEditar.Controls.Add(btnGuardar);
             tabPageAgregarEditar.Controls.Add(txtNombre);
@@ -180,16 +192,70 @@
             tabPageAgregarEditar.Text = "Agregar/Editar";
             tabPageAgregarEditar.UseVisualStyleBackColor = true;
             // 
+            // comboLocalidades
+            // 
+            comboLocalidades.FormattingEnabled = true;
+            comboLocalidades.Location = new Point(308, 211);
+            comboLocalidades.Name = "comboLocalidades";
+            comboLocalidades.Size = new Size(224, 28);
+            comboLocalidades.TabIndex = 17;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(187, 210);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(77, 20);
+            label4.TabIndex = 16;
+            label4.Text = "Localidad:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(308, 164);
+            textBox2.Margin = new Padding(4);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(224, 27);
+            textBox2.TabIndex = 15;
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.AutoSize = true;
+            txtTelefono.Location = new Point(182, 170);
+            txtTelefono.Margin = new Padding(4, 0, 4, 0);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(70, 20);
+            txtTelefono.TabIndex = 14;
+            txtTelefono.Text = "Telefono:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(308, 129);
+            textBox1.Margin = new Padding(4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(224, 27);
+            textBox1.TabIndex = 13;
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.AutoSize = true;
+            txtDireccion.Location = new Point(182, 129);
+            txtDireccion.Margin = new Padding(4, 0, 4, 0);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(75, 20);
+            txtDireccion.TabIndex = 12;
+            txtDireccion.Text = "Direccion:";
+            // 
             // btnCancelar
             // 
             btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
             btnCancelar.IconColor = Color.Black;
             btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(572, 243);
+            btnCancelar.Location = new Point(573, 254);
             btnCancelar.Margin = new Padding(4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(114, 64);
+            btnCancelar.Size = new Size(113, 53);
             btnCancelar.TabIndex = 11;
             btnCancelar.Text = "&Cancelar";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
@@ -202,10 +268,10 @@
             btnGuardar.IconColor = Color.Black;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(73, 243);
+            btnGuardar.Location = new Point(21, 270);
             btnGuardar.Margin = new Padding(4);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(115, 59);
+            btnGuardar.Size = new Size(114, 48);
             btnGuardar.TabIndex = 10;
             btnGuardar.Text = "&Guardar";
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
@@ -214,7 +280,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(320, 130);
+            txtNombre.Location = new Point(308, 83);
             txtNombre.Margin = new Padding(4);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(224, 27);
@@ -223,7 +289,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(191, 145);
+            label2.Location = new Point(182, 90);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(67, 20);
@@ -316,7 +382,7 @@
             tabControlLista.ResumeLayout(false);
             tabPageLista.ResumeLayout(false);
             tabPageLista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridLocalidadesView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridClientesView).EndInit();
             tabPageAgregarEditar.ResumeLayout(false);
             tabPageAgregarEditar.PerformLayout();
             ResumeLayout(false);
@@ -331,7 +397,7 @@
         private FontAwesome.Sharp.IconButton bntBuscar;
         private Label label3;
         private TextBox txtFiltro;
-        private DataGridView dataGridLocalidadesView;
+        private DataGridView dataGridClientesView;
         private TabPage tabPageAgregarEditar;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnGuardar;
@@ -341,6 +407,13 @@
         private FontAwesome.Sharp.IconButton bntModificar;
         private FontAwesome.Sharp.IconButton bntElimiar;
         private FontAwesome.Sharp.IconButton bntSalir;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnBuscar;
+        private TextBox textBox1;
+        private Label txtDireccion;
+        private TextBox textBox2;
+        private Label label5;
+        private Label txtTelefono;
+        private ComboBox comboLocalidades;
+        private Label label4;
     }
 }

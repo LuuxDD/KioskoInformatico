@@ -25,7 +25,7 @@ namespace KioscoInformaticoDesktop.Views
         public ProductoView()
         {
             InitializeComponent();
-            dataGridLocalidadesView.DataSource = ListLocalidades;
+            dataGridLocalidadesView.DataSource = ListProductos;
             CargarGrilla();
         }
 
@@ -47,7 +47,7 @@ namespace KioscoInformaticoDesktop.Views
             tabControl.SelectTab(tabPageAgregarEditar);
         }
 
-        private void bntElimiar_Click(object sender, EventArgs e)
+        private async void bntElimiar_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("¿Está seguro que desea eliminar el producto?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -61,7 +61,7 @@ namespace KioscoInformaticoDesktop.Views
             }
         }
 
-        private void btnGuardar_Click_1(object sender, EventArgs e)
+        private async void btnGuardar_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text))
             {

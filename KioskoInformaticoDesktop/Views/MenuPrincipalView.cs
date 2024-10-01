@@ -27,8 +27,14 @@ namespace KioskoInformaticoService
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           ProductoView productoView = new ProductoView();
+            ProductoView productoView = new ProductoView();
             productoView.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClienteView clienteView = new ClienteView();
+            clienteView.ShowDialog();
         }
     }
 }

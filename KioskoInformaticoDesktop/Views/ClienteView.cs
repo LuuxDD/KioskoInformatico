@@ -25,8 +25,16 @@ namespace KioscoInformaticoDesktop.Views
             InitializeComponent();
             dataGridClientesView.DataSourse = ListClientes;
             CargarGrilla();
+            CargarCombo();
         }
 
+        private async Task CargarCombo()
+        {
+            comboLocalidades.DataSource = await localidadService.GetAllAsync();
+            comboLocalidades.DisplayMember = "Nombre";
+            comboLocalidades.ValueMember = "Id";
+            comboLocalidades.SelectedIndex = 0;
+        }
 
         private async Task CargarGrilla()
         {
@@ -43,6 +51,9 @@ namespace KioscoInformaticoDesktop.Views
         {
             clienteCurrent = (Cliente)ListClientes.Current;
             txtNombre.Text = clienteCurrent.Nombre;
+            txtDireccion.Text = clienteCurrent.Direccion;
+            txtTelefono.Text = clienteCurrent.Telefonos;
+            comboLocalidades.SelectedValue = clienteCurrent.LocalidadId;
             tabControl.SelectedTab = (tabPageAgregarEditar);
         }
 
@@ -73,6 +84,11 @@ namespace KioscoInformaticoDesktop.Views
             this.Close();
         }
 
+        private async void FiltrarCliente()
+        {
+           ListClientes.DataSource = await clienteService.GetAllAsync(txtFiltro.Text);
+        }
+
         private void iconButton1_Click(object sender, EventArgs e)
         {
             FiltrarCliente();
@@ -80,35 +96,48 @@ namespace KioscoInformaticoDesktop.Views
 
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text))
-            {
-                MessageBox.Show("El nombre del cliente es obligatorio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+
 
             if (clienteCurrent != null)
             {
                 clienteCurrent.Nombre = txtNombre.Text;
+                clienteCurrent.Direccion = txtDireccion.Text;
+                clienteCurrent.Telefonos = txtTelefono.Text;
+                clienteCurrent.LocalidadId = (int)comboLocalidades.SelectedValue;
                 await clienteService.UpdateAsync(clienteCurrent);
                 clienteCurrent = null;
             }
             else
             {
-                var localidad = new Localidad
+                var cliente = new Cliente
                 {
-                    Nombre = txtNombre.Text
-                };
+                    Nombre = txtNombre.Text,
+                    Direccion = txtDireccion.Text,
+                    Telefonos = txtTelefono.Text,
+                    LocalidadId = (int)comboLocalidades.SelectedValue
+                }
             }
 
             await CargarGrilla();
+
             txtNombre.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
             tabControl.SelectTab(tabPageLista);
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            clienteCurrent = null;
+            txtNombre.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            comboLocalidades.SelectedIndex = 0;
             tabControl.SelectTab(tabPageLista);
         }
+
+
     }
 }
 
