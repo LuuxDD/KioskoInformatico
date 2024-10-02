@@ -2,7 +2,7 @@
 @inject IGenericService<Localidad> LocalidadService
 @inject NavigationManager NavigationManager
 
-<h3>Editando una localidad </h3>
+<HeaderPage TitlePage="Editando una Localidad" />
 
 @if (localidad == null)
 {
@@ -41,5 +41,11 @@ else
         await LocalidadService.UpdateAsync(localidad);
         NavigationManager.NavigateTo("/localidades"); 
     }
+
+    
+
+
+
+}
 
 }
