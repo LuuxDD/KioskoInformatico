@@ -76,7 +76,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\Productos.xaml.cs">
+	    <DependentUpon>Productos.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\IniciarSesionView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Productos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

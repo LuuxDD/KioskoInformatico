@@ -1,0 +1,67 @@
+﻿@page "/localidades"
+@inject IGenericService<Cliente> GenericService
+@inject SweetAlertService SweetAlert
+
+<HeaderPage TitlePage="Cliente" />
+
+@if (cliente == null)
+{
+    <p><em>Obteniendo lista clientes</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in cliente)
+            {
+                <tr>
+                    <td>@cliente.Id</td>
+                    <td>@cliente.Nombre</td>
+                    <td>
+                        <a href="/editarcliente?ClienteEditado=@cliente.Id">Editar</a>
+                    </td>
+                    <td>
+                        <button title="Eliminar" class="btn btn-danger" @onclick="@(()=>Eliminar(cliente))">Eliminar</button>
+                     </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Cliente>? cliente;
+
+    protected override async Task OnInitializedAsync()
+    {
+        cliente = await ClienteService.GetAllAsync();
+    }
+    private async void Eliminar(Cliente cliente)
+    {
+        SweetAlertResult respuesta = await SweetAlert.FireAsync(new SweetAlertOptions
+            {
+                Title = "Borrando Producto",
+                Text = $"¿Está seguro que desea el cliente {cliente.Nombre}",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Si, quiero borrarla!",
+                CancelButtonText = "No, espera"
+            });
+        if (respuesta.IsConfirmed)
+        {
+            await ClienteService.DeleteAsync(cliente.Id);
+            cliente = await ClienteService.GetAllAsync();
+            StateHasChanged();
+        }
+
+    }
+}

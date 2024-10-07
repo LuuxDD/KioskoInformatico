@@ -1,5 +1,6 @@
 ﻿@page "/productos"
 @inject IGenericService<Producto> GenericService
+@inject SweetAlertService SweetAlert
 
     <HeaderPage TitlePage="Producto"/>
 
@@ -39,5 +40,25 @@ else
     protected override async Task OnInitializedAsync()
     {
         productos = await GenericService.GetAllAsync();
+    }
+
+    private async void Eliminar(Producto producto)
+    {
+        SweetAlertResult respuesta = await SweetAlert.FireAsync(new SweetAlertOptions
+            {
+                Title = "Borrando Producto",
+                Text = $"¿Está seguro que desea borrar el producto {producto.Nombre}",
+                Icon = SweetAlertIcon.Warning,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Si, quiero borrarlo!",
+                CancelButtonText = "No, espera"
+            });
+        if (respuesta.IsConfirmed)
+        {
+            await ProductosService.DeleteAsync(producto.Id);
+            producto = await ProductosService.GetAllAsync();
+            StateHasChanged();
+        }
+
     }
 }

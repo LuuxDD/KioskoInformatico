@@ -25,13 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Pages\Clientes\Cliente.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Pages\Productos\Productos.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Clientes\" />
   </ItemGroup>
 
 </Project>
