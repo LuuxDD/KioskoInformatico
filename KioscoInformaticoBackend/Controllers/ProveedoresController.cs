@@ -31,6 +31,7 @@ namespace KioscoInformaticoBackend.Controllers
 
         // GET: api/Proveedores/5
         [HttpGet("{id}")]
+        
         public async Task<ActionResult<Proveedor>> GetProveedor(int id)
         {
             var proveedor = await _context.Proveedores.FindAsync(id);
