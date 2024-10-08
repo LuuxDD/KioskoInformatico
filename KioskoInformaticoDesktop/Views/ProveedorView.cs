@@ -31,7 +31,7 @@ namespace KioscoInformaticoDesktop.Views
 
         private async Task CargarCombo()
         {
-            comboLocalidades.DataSource = await proveedorService.GetAllAsync();
+            comboLocalidades.DataSource = await localidadService.GetAllAsync();
             comboLocalidades.DisplayMember = "Nombre";
             comboLocalidades.ValueMember = "Id";
             comboLocalidades.SelectedIndex = 0;
