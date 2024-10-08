@@ -36,5 +36,11 @@ namespace KioskoInformaticoService
             ClienteView clienteView = new ClienteView();
             clienteView.ShowDialog();
         }
+
+        private void provedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                ProveedorView proveedorView = new ProveedorView();
+                proveedorView.ShowDialog();  
+        }
     }
 }
