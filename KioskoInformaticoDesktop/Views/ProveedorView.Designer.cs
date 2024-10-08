@@ -53,10 +53,12 @@
             txtNombre = new TextBox();
             label2 = new Label();
             panel1 = new Panel();
+            label5 = new Label();
             tabControlLista.SuspendLayout();
             tabPageLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridLocalidadesView).BeginInit();
             tabPageAgregarEditar.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tabControlLista
@@ -371,10 +373,22 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(label5);
             panel1.Location = new Point(3, 5);
             panel1.Name = "panel1";
             panel1.Size = new Size(978, 78);
             panel1.TabIndex = 6;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Verdana", 20.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.Location = new Point(65, 18);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(258, 41);
+            label5.TabIndex = 1;
+            label5.Text = "Proveedores";
             // 
             // ProveedorView
             // 
@@ -384,6 +398,7 @@
             Controls.Add(panel1);
             Controls.Add(tabControlLista);
             Name = "ProveedorView";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Proveedores";
             tabControlLista.ResumeLayout(false);
             tabPageLista.ResumeLayout(false);
@@ -391,6 +406,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridLocalidadesView).EndInit();
             tabPageAgregarEditar.ResumeLayout(false);
             tabPageAgregarEditar.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -421,5 +438,6 @@
         private ComboBox comboLocalidades;
         private TextBox txtCBU;
         private Label label1;
+        private Label label5;
     }
 }

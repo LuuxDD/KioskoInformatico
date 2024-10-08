@@ -16,7 +16,9 @@ public partial class Producto
 
     public decimal Precio { get; set; }
 
-    public virtual ICollection<DetalleCompra> Detallescompras { get; set; } = new List<DetalleCompra>();
+   
+    public bool Eliminado { get; set; } = false;
 
-    public virtual ICollection<DetalleVenta> Detallesventa { get; set; } = new List<DetalleVenta>();
+    public bool oferta { get; set; } = false;
 }
+

@@ -16,4 +16,7 @@ public partial class DetalleCompra
     public int CompraId { get; set; }
 
     public virtual Producto Producto { get; set; } = null!;
+
+    public bool Eliminado { get; set; } = false;
+
 }
