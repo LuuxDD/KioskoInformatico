@@ -32,6 +32,7 @@ namespace KioscoInformaticoApp.ViewModels
                 _isRefreshing = value;
                 OnPropertyChanged();
             }
+        }
 
         private ObservableCollection<Producto> productos;
 
