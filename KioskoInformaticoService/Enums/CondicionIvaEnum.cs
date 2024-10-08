@@ -8,8 +8,9 @@ namespace KioskoInformaticoServices.Enums
 {
     public enum CondicionIvaEnum
     {
-        ResponsableInscripto,
-        ResponsableNoInscripto,
+        No_Definido,
+        Responsable_Inscripto,
+        Responsable_No_Inscripto,
         Exento,
         NoResponsable,
         ConsumidorFinal,

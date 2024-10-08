@@ -17,6 +17,7 @@ namespace KioscoInformaticoDesktop.Views
     {
 
         IGenericService<Proveedor> proveedorService = new GenericService<Proveedor>();
+        ILocalidadService localidadService = new LocalidadService();
         BindingSource ListProveedor = new BindingSource();
         List<Proveedor> ListaAFiltrar = new List<Proveedor>();
         Proveedor proveedorCurrent;
@@ -25,6 +26,15 @@ namespace KioscoInformaticoDesktop.Views
             InitializeComponent();
             dataGridLocalidadesView.DataSource = ListProveedor;
             CargarGrilla();
+            CargarCombo();
+        }
+
+        private async Task CargarCombo()
+        {
+            comboLocalidades.DataSource = await proveedorService.GetAllAsync();
+            comboLocalidades.DisplayMember = "Nombre";
+            comboLocalidades.ValueMember = "Id";
+            comboLocalidades.SelectedIndex = 0;
         }
 
         private async Task CargarGrilla()
@@ -42,6 +52,10 @@ namespace KioscoInformaticoDesktop.Views
         {
             proveedorCurrent = (Proveedor)ListProveedor.Current;
             txtNombre.Text = proveedorCurrent.Nombre;
+            txtDireccion.Text = proveedorCurrent.Direccion;
+            txtTelefono.Text = proveedorCurrent.Telefonos;
+            txtCBU.Text = proveedorCurrent.Cbu;
+            comboLocalidades.SelectedValue = proveedorCurrent.LocalidadId;
             tabControlLista.SelectTab(tabPageAgregarEditar);
         }
 
@@ -84,6 +98,8 @@ namespace KioscoInformaticoDesktop.Views
                 proveedorCurrent.Nombre = txtNombre.Text;
                 proveedorCurrent.Direccion = txtDireccion.Text;
                 proveedorCurrent.Telefonos = txtTelefono.Text;
+                proveedorCurrent.LocalidadId = (int)comboLocalidades.SelectedValue;
+                proveedorCurrent.Cbu = txtCBU.Text;
 
             }
             else
@@ -93,6 +109,9 @@ namespace KioscoInformaticoDesktop.Views
                     Nombre = txtNombre.Text,
                     Direccion = txtDireccion.Text,
                     Telefonos = txtTelefono.Text,
+                    LocalidadId = (int)comboLocalidades.SelectedValue,
+                    Cbu = txtCBU.Text
+
 
                 };
                 await proveedorService.AddAsync(proveedor);
@@ -103,6 +122,9 @@ namespace KioscoInformaticoDesktop.Views
             txtNombre.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             txtTelefono.Text = string.Empty;
+            txtCBU.Text = string.Empty;
+            
+
             tabControlLista.SelectTab(tabPageLista);
 
         }
@@ -114,6 +136,8 @@ namespace KioscoInformaticoDesktop.Views
             proveedorCurrent = null;
             txtNombre.Text = string.Empty;
             txtDireccion.Text = string.Empty;
+            txtCBU.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
             tabControlLista.SelectTab(tabPageLista);
 
         }
