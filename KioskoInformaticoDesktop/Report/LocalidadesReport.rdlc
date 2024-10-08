@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>3.389cm</Height>
+              <Height>0.76433cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -32,7 +32,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Id</rd:DefaultName>
-                          <Top>0.65617cm</Top>
+                          <Top>0.05617cm</Top>
                           <Left>1.08656cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.45767cm</Width>
@@ -61,71 +61,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Nombre</rd:DefaultName>
-                          <Top>0.65617cm</Top>
-                          <Left>3.54422cm</Left>
+                          <Top>0.05617cm</Top>
+                          <Left>3.57951cm</Left>
                           <Height>0.6cm</Height>
                           <Width>11.5805cm</Width>
                           <ZIndex>1</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox2">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Código</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>0.05617cm</Top>
-                          <Left>1.08656cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>2.45767cm</Width>
-                          <ZIndex>2</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox3">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Nombre</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>0.05617cm</Top>
-                          <Left>3.5795cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>2.45767cm</Width>
-                          <ZIndex>3</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -163,9 +103,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSLocalidades</DataSetName>
-        <Top>1.3685cm</Top>
-        <Left>0.49953cm</Left>
-        <Height>3.389cm</Height>
+        <Top>0.17639cm</Top>
+        <Left>0.76531cm</Left>
+        <Height>0.76433cm</Height>
         <Width>15.3905cm</Width>
         <Style>
           <Border>
@@ -174,13 +114,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.05833in</Height>
+    <Height>0.475in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.69667in</Width>
   <Page>
     <PageHeader>
-      <Height>2.7717cm</Height>
+      <Height>2.53887cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -202,8 +142,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.4732cm</Top>
-          <Left>4.04376cm</Left>
+          <Top>0.3302cm</Top>
+          <Left>4.76343cm</Left>
           <Height>1.08683cm</Height>
           <Width>7.41067cm</Width>
           <Style>
@@ -217,10 +157,81 @@
           </Style>
         </Textbox>
         <Line Name="Line2">
-          <Top>2.73642cm</Top>
+          <Top>1.78392cm</Top>
           <Height>0cm</Height>
           <Width>16.51cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Código</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.79776cm</Top>
+          <Left>1.71075cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.45767cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Nombre</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>1.86831cm</Top>
+          <Left>4.23898cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.45767cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line6">
+          <Top>2.43303cm</Top>
+          <Height>0cm</Height>
+          <Width>16.51cm</Width>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -235,7 +246,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.41817cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -258,7 +269,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.813cm</Top>
+          <Top>0.289cm</Top>
           <Left>13.39003cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>

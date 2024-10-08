@@ -1,3 +1,4 @@
+using KioscoInformaticoDesktop.ViewReports;
 using KioscoInformaticoDesktop.Views;
 using KioskoInformaticoService.Views;
 
@@ -39,8 +40,14 @@ namespace KioskoInformaticoService
 
         private void provedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                ProveedorView proveedorView = new ProveedorView();
-                proveedorView.ShowDialog();  
+            ProveedorView proveedorView = new ProveedorView();
+            proveedorView.ShowDialog();
+        }
+
+        private void iconMenuItem3_Click(object sender, EventArgs e)
+        {
+            LocalidadesViewReport localidadesViewReport = new LocalidadesViewReport();
+            localidadesViewReport.ShowDialog();
         }
     }
 }

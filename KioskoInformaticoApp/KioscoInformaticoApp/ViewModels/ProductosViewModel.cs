@@ -19,7 +19,7 @@ namespace KioscoInformaticoApp.ViewModels
         {
             get { return filterProducts; }
             set { filterProducts = value; OnPropertyChanged();
-                                         _ = FiltrarProductos();     
+                                         _ = filterProducts();     
             }
         }
         private bool _isRefreshing;

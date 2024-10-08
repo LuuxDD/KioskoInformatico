@@ -1,5 +1,4 @@
-﻿using KioskoInformaticoDesktop.DataContext;
-using KioskoInformaticoServices.Interfaces;
+﻿using KioskoInformaticoServices.Interfaces;
 using KioskoInformaticoServices.Models;
 using KioskoInformaticoServices.Services;
 using System;
