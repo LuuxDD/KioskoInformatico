@@ -37,8 +37,7 @@
             ClientSize = new Size(800, 450);
             Name = "LocalidadesViewReport";
             Text = "LocalidadesViewReport";
-            WindowState = FormWindowState.Maximized;
-            Load += LocalidadesViewReport_Load_1;
+            Load += LocalidadesViewReport_Load;
             ResumeLayout(false);
         }
 
